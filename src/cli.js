@@ -23,6 +23,8 @@ for ( const param of params ) {
 		case 'disallowDuplicateTranslations':
 		case 'disallowUnusedDocumentation':
 		case 'disallowUnusedTranslations':
+		case 'allowLeadingWhitespace':
+		case 'allowTrailingWhitespace':
 		case 'ignoreMissingBlankTranslations':
 		case 'requireCompleteMessageDocumentation':
 		case 'requireLowerCase':
@@ -49,6 +51,7 @@ for ( const param of params ) {
 
 if ( !dirs.length ) {
 	console.error( 'banana-check: Specify one or more directories.' );
+	// eslint-disable-next-line no-process-exit
 	process.exit( 1 );
 }
 
@@ -61,6 +64,7 @@ const result = dirs.every( ( dir ) => {
 	);
 } );
 if ( !result ) {
+	// eslint-disable-next-line no-process-exit
 	process.exit( 1 );
 }
 
