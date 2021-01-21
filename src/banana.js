@@ -327,7 +327,6 @@ module.exports = function bananaChecker( dir, options, logErr ) {
 			if ( count > 0 ) {
 				ok = false;
 				logErr( `The "${index}" translation has ${count} message${( count > 1 ? 's' : '' )} which fail${( count > 1 ? 's' : '' )} to use all parameters:` );
-				// eslint-disable-next-line no-loop-func
 				translatedData[ index ].unusedParameters.forEach( function ( report ) {
 					switch ( report.stack.length ) {
 						case 1:
